@@ -1,0 +1,6 @@
+Flask
+torch
+torchvision
+Pillow
+werkzeug
+tqdm
