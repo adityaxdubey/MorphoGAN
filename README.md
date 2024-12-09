@@ -18,7 +18,19 @@ docker build -t morphogan .<br>
 docker run -p 5000:5000 morphogan<br>
 ```
 The application will be available at http://127.0.0.1:5000.
-### Parameters:
-content_weight: The importance of the content in the generated image. Default is 1.0.<br>
-style_weight: The importance of the style. Default is 1000.<br>
-epochs: Number of epochs to train the model. Default is 100.
+## Parameters
+
+### content_weight
+**The importance of the content in the generated image.**
+- **Default:** 1.0
+- **Description:** Controls how much the generated image should resemble the content image. Higher values place more emphasis on the content.
+
+### style_weight
+**The importance of the style.**
+- **Default:** 1000
+- **Description:** Determines how strongly the style of the style image should be applied to the content image. Higher values result in a stronger style influence.
+
+### epochs
+**Number of epochs to train the model.**
+- **Default:** 100
+- **Description:** Specifies the number of training iterations. More epochs can lead to better style transfer but may increase training time.
