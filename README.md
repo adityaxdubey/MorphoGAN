@@ -13,15 +13,30 @@ The key idea behind AdaIN is to align the mean and standard deviation of the con
 To implement this in MorphoGAN, I combined the AdaIN technique with a pre-trained VGG19 network,<br> which is widely used for feature extraction in style transfer.<br>
 
 **Mathematic intution**:
-$\hat{c}_i = \frac{c_i - \mu_c}{\sigma_c} \cdot \sigma_s + \mu_s$ <br>
-$\hat{c}_i$ is the content feature map after applying AdaIN.<br>
-$\mu_c$ and $\sigma_c$ are the mean and standard deviation of the content features.<br>
-<br>
-**Total Loss**: <br>
-$L_{total} = \lambda_{content} L_{content} + \lambda_{style} L_{style}$
-<br>$L_{content}$ is the content loss.<br>
-$L_{style}$ is the style loss.<br>
-$\lambda_{content}$ and $\lambda_{style}$ are the weights for the content and style losses, respectively.
+$$
+\hat{c}_i = \frac{c_i - \mu_c}{\sigma_c} \cdot \sigma_s + \mu_s
+$$
+
+Where:
+- $c_i$ is the content feature map.
+- $\mu_c$ and $\sigma_c$ are the mean and standard deviation of the content features.
+- $\mu_s$ and $\sigma_s$ are the mean and standard deviation of the style features.
+- $\hat{c}_i$ is the content feature map after applying AdaIN.
+
+---
+
+### Total Loss
+
+The total loss combines the content loss and the style loss:
+
+$$
+L_{total} = \lambda_{content} L_{content} + \lambda_{style} L_{style}
+$$
+
+Where:
+- $L_{content}$ is the content loss.
+- $L_{style}$ is the style loss.
+- $\lambda_{content}$ and $\lambda_{style}$ are the weights for the content and style losses, respectively.
 
 ### Docker Setup
 ```python
