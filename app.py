@@ -72,7 +72,9 @@ def upload_files():
     <title>Style Transfer Application</title>
 </head>
 <body>
-    <h1>Upload Content and Style Images</h1>
+    <h1>Welcome to MorphoGAN: Transform Your Photos into Stunning Artwork!</h1>
+    <p>Created with love by Aditya Dubey. Upload your content and style images to see the magic of AI-driven style transfer.</p>
+
     <form method="post" enctype="multipart/form-data">
         <label for="content">Content Image:</label>
         <input type="file" id="content" name="content" required><br><br>
