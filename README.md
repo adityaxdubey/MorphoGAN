@@ -12,10 +12,11 @@ The key idea behind AdaIN is to align the mean and standard deviation of the con
 To implement this in MorphoGAN, I combined the AdaIN technique with a pre-trained VGG19 network,<br> which is widely used for feature extraction in style transfer. 
 
 ### Docker Setup
+```python
 docker build -t morphogan .<br>
 docker run -p 5000:5000 morphogan<br>
 The application will be available at http://127.0.0.1:5000.
-
+```
 ### Parameters:
 content_weight: The importance of the content in the generated image. Default is 1.0.<br>
 style_weight: The importance of the style. Default is 1000.<br>
