@@ -10,11 +10,18 @@ Image style transfer tool that transforms your content images into artwork inspi
 
 ## How I Came Up with AdaIN for Style Transfer
 The key idea behind AdaIN is to align the mean and standard deviation of the content and style features while maintaining the structure of the content.<br> By normalizing the content features and then adapting them to the style's mean and standard deviation,<br> AdaIN ensures that the content image retains its essence, while the style image contributes its artistic features without distortion.<br>
-To implement this in MorphoGAN, I combined the AdaIN technique with a pre-trained VGG19 network,<br> which is widely used for feature extraction in style transfer. 
-Mathematic intution:<br>
+To implement this in MorphoGAN, I combined the AdaIN technique with a pre-trained VGG19 network,<br> which is widely used for feature extraction in style transfer.<br>
+
+**Mathematic intution**:<br>
 $\hat{c}_i = \frac{c_i - \mu_c}{\sigma_c} \cdot \sigma_s + \mu_s$ <br>
 $\hat{c}_i$ is the content feature map after applying AdaIN.<br>
-$\mu_c$ and $\sigma_c$ are the mean and standard deviation of the content features.
+$\mu_c$ and $\sigma_c$ are the mean and standard deviation of the content features.<br>
+<br>
+**Total Loss**: <br>
+$L_{total} = \lambda_{content} L_{content} + \lambda_{style} L_{style}$
+<br>$L_{content}$ is the content loss.<br>
+$L_{style}$ is the style loss.<br>
+$\lambda_{content}$ and $\lambda_{style}$ are the weights for the content and style losses, respectively.
 
 ### Docker Setup
 ```python
