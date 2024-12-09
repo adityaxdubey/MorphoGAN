@@ -17,6 +17,6 @@ Run Docker Container:docker run -p 5000:5000 morphogan
 The application will be available at http://127.0.0.1:5000.
 
 ## Parameters:
-content_weight: The importance of the content in the generated image. Default is 1.0.
+content_weight: The importance of the content in the generated image. Default is 1.0.<br>
 style_weight: The importance of the style. Default is 1000.
 epochs: Number of epochs to train the model. Default is 100.
